@@ -1,16 +1,24 @@
-const BagSummary = () => {
+const BagSummary = ({}) => {
+  const bagSummary = {
+    totalItems: 3,
+    totalMRP: 2345,
+    totalDiscount: 999,
+    finalPayment: 1346,
+  };
   return (
-    <>
+    <div className="bag-summary">
       <div className="bag-details-container">
-        <div className="price-header">PRICE DETAILS ({totalItem} Items) </div>
+        <div className="price-header">
+          PRICE DETAILS ({bagSummary.totalItem} Items){" "}
+        </div>
         <div className="price-item">
           <span className="price-item-tag">Total MRP</span>
-          <span className="price-item-value">₹{totalMRP}</span>
+          <span className="price-item-value">₹{bagSummary.totalMRP}</span>
         </div>
         <div className="price-item">
           <span className="price-item-tag">Discount on MRP</span>
           <span className="price-item-value priceDetail-base-discount">
-            -₹{totalDiscount}
+            -₹{bagSummary.totalDiscount}
           </span>
         </div>
         <div className="price-item">
@@ -20,13 +28,13 @@ const BagSummary = () => {
         <hr />
         <div className="price-footer">
           <span className="price-item-tag">Total Amount</span>
-          <span className="price-item-value">₹{finalPayment}</span>
+          <span className="price-item-value">₹{bagSummary.finalPayment}</span>
         </div>
       </div>
       <button className="btn-place-order">
         <div className="css-xjhrni">PLACE ORDER</div>
       </button>
-    </>
+    </div>
   );
 };
 
