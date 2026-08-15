@@ -26,7 +26,7 @@ const BagItem = ({ item }) => {
 
       <div
         className="remove-from-cart"
-        onclick={() => "Item removed from Cart"}
+        onClick={() => "Item removed from Cart"}
       >
         X
       </div>

@@ -1,12 +1,13 @@
+import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import HomeItem from "../components/HomeItem";
-import { Outlet } from "react-router-dom";
+import FetchItems from "../components/fetchItems";
 
 function App() {
   return (
     <>
       <Header />
+      <FetchItems></FetchItems>
       <Outlet></Outlet>
       <Footer></Footer>
     </>
