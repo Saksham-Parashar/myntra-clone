@@ -1,9 +1,12 @@
 import { IoPersonSharp } from "react-icons/io5";
 import { FaHeart } from "react-icons/fa";
 import { IoBagSharp } from "react-icons/io5";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { FaSearch } from "react-icons/fa";
 
 const Header = () => {
+  const bag = useSelector((store) => store.bag);
   return (
     <>
       <header>
@@ -27,7 +30,9 @@ const Header = () => {
           </a>
         </nav>
         <div className="search_bar">
-          <span className="material-symbols-outlined search_icon">search</span>
+          <span className="material-symbols-outlined search_icon">
+            <FaSearch />
+          </span>
           <input
             className="search_input"
             placeholder="Search for products, brands and more"
@@ -47,7 +52,7 @@ const Header = () => {
           <Link className="action_container" to="/bag">
             <IoBagSharp />
             <span className="action_name">Bag</span>
-            <span className="bag-item-count">0</span>
+            <span className="bag-item-count">{bag.length}</span>
           </Link>
         </div>
       </header>
